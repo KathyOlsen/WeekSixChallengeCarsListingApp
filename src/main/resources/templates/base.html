@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Base</title>
+    <div th:fragment="head">
+        <meta charset=" UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../myStyles.css">
+    </div>
+</head>
+<body>
+<div th:fragment="navlinks" style="background-color: blue">
+    <nav class="nav">
+        <a class="nav-link"  style="color: whitesmoke" href="/">Home</a>
+        <a class="nav-link"  style="color: whitesmoke" href="/addcar">Add a Car</a>
+        <a class="nav-link"  style="color: whitesmoke" href="/addcategory">Add a Category</a>
+        <a class="nav-link"  style="color: whitesmoke" href="/carlist">Car List</a>
+        <a class="nav-link"  style="color: whitesmoke" href="/categorylist">Category List</a>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <!--        <form th:action="@{/processsearch}" method="post">-->
+        <!--            <input type="text"-->
+        <!--                   placeholder="Search.."-->
+        <!--                   name="search">-->
+        <!--            <button type="submit" style="color: blue"><b>Submit Search</b></button>-->
+        <!--        </form>-->
+    </nav>
+</div>
+<div th:fragment="bootstrapScripts">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</div>
+</body>
+
+<div th:fragment="footer"
+     position="fixed"
+     style="padding-left: 0px; padding-right: 0px; padding-bottom: 0px;
+     width: 100%;
+     text-align: center;
+     background-color: blue;
+     color: whitesmoke"
+     font-family="'Scheherazade', serif;" font-size 18px>
+    &#0169; Copyright 2019 Katherine K. Olsen. All rights reserved.
+</div>
+</html>
