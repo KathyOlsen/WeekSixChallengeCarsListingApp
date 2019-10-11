@@ -53,25 +53,25 @@ public class DataLoader implements CommandLineRunner {
         Category truck = categoryRepository.findByCategoryNameEquals("Light Truck");
 
         Car car;
-        car=new Car("Toyota","Sienna AWD Limited",2006,"Silver",minivan,6000);
+        car=new Car("Toyota","Sienna AWD Limited",2006,"Silver",minivan,"Used",6000);
         carRepository.save(car);
 
-        car=new Car("Nissan","Maxima V6 ",2008,"Red",sedan,4000);
+        car=new Car("Nissan","Maxima V6 ",2008,"Red",sedan,"Used",4000);
         carRepository.save(car);
 
-        car=new Car("Toyota","Camry LE",2016,"Beige",sedan,12000);
+        car=new Car("Toyota","Camry LE",2016,"Beige",sedan,"Used",12000);
         carRepository.save(car);
 
-        car=new Car("Ford","F 150",2019,"Blue",truck,38000);
+        car=new Car("Ford","F 150",2019,"Blue",truck,"NEW!",38000);
         carRepository.save(car);
 
-        car=new Car("Chevrolet","Camaro ZL1",2019,"Red",coupe,58800);
+        car=new Car("Chevrolet","Camaro ZL1",2019,"Red",coupe,"NEW!",58800);
         carRepository.save(car);
 
-        car=new Car("Audi","Q7 3.0T Premium Plus",2018,"White",suv,43900);
+        car=new Car("Audi","Q7 3.0T Premium Plus",2018,"White",suv,"Used",43900);
         carRepository.save(car);
 
-        car=new Car("Toyota","Highlander",2017,"Black",suv,40000);
+        car=new Car("Toyota","Highlander",2017,"Black",suv,"Used",40000);
         carRepository.save(car);
     }
 }

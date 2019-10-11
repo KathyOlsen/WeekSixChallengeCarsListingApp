@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Car Detail</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<br>
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1 style="color: maroon">Car Details</h1>
+        <table style="alignment: center">
+            <tr>
+                <td>Year: &nbsp;</td>
+                <td><span th:text="${car.year}"></span></td>
+            </tr>
+            <tr>
+                <td>Make: &nbsp;</td>
+                <td><span th:text="${car.make}"></span></td>
+            </tr>
+            <tr>
+                <td>Model: &nbsp;</td>
+                <td><span th:text="${car.model}"></span></td>
+            </tr>
+            <tr>
+                <td>Category: &nbsp;</td>
+                <td><span th:text="${car.category.categoryName}"></span></td>
+            </tr>
+            <tr>
+                <td>Color: &nbsp;</td>
+                <td><span th:text="${car.color}"></span></td>
+            </tr>
+            <tr>
+                <td>Condition: &nbsp;</td>
+                <td><span th:text="${car.used}"></span></td>
+            </tr>
+            <tr>
+                <td>Price: &nbsp;</td>
+                <td><span th:text="${car.priceString}"></span></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br>
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>

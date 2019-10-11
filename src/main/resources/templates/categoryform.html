@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Category Form</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<br>
+<div class="container">
+    <div class="jumbotron">
+        <h1 style="color: maroon">Category Form</h1>
+        <br>
+        <form action="#" th:action="@{/processcategory}" th:object="${category}" method="post">
+            <input type="hidden" th:field="*{id}" />
+            <p>Category Name:</p>
+            <input type="text" th:field="*{categoryName}" />
+            <span th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}"></span>
+            <br>
+            <br>
+            <button type="submit" style="color: maroon"><b>Submit</b></button>
+        </form>
+    </div>
+</div>
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>

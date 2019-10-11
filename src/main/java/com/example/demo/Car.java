@@ -30,7 +30,11 @@ public class Car {
     @ManyToOne()
     private Category category;
 
+    private String used;
+
     private int price;
+
+    private String priceString;
 
     public Car() {
     }
@@ -40,19 +44,26 @@ public class Car {
                @NotNull @Min(1920) @Max(2050) int year,
                String color,
                Category category,
+               String used,
                int price) {
         this.make = make;
         this.model = model;
         this.year = year;
         this.color = color;
         this.category = category;
+        this.used = used;
         this.price = price;
+        this.priceString = "$" + String.format("%,d", price);
     }
+
+
+//    public static String formatPrice (int price) {
+//        return String.format("%,d", price);
+//    }
 
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -97,11 +108,27 @@ public class Car {
         this.category = category;
     }
 
+    public String getUsed() {
+        return used;
+    }
+
+    public void setUsed(String used) {
+        this.used = used;
+    }
+
     public int getPrice() {
         return price;
     }
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public String getPriceString() {
+        return priceString;
+    }
+
+    public void setPriceString(String priceString) {
+        this.priceString = priceString;
     }
 }

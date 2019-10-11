@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Category Detail</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<br>
+<div class="container">
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <h1 style="color: maroon">Category Details</h1>
+            Category Name: <b><span th:text="${category.categoryName}"></span></b><br />
+            <br>
+            <span>Cars:</span><br>
+            <br>
+            <table>
+                <tr>
+                    <th>Year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Make&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Color&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Condition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Price&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+
+                </tr>
+
+                <tr th:each="car : ${category.cars}">
+                    <td th:text="${car.year}"></td>
+                    <td th:text="${car.make}"></td>
+                    <td th:text="${car.model}"></td>
+                    <td th:text="${car.color}"></td>
+                    <td style="text-align: center" th:text="${car.used}"></td>
+                    <td style="text-align: right" th:text="${car.priceString}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<br>
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>

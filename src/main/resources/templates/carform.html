@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Car Form</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<br>
+<div class="container-fluid" style="margin-left: 100px; margin-right: 100px">
+    <h1 style="color: maroon">Car Form</h1>
+    <br>
+    <form action="#" th:action="@{/processcar}" th:object="${car}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <div class="row">
+            <div class="col-sm-2"></div>
+
+                <div class="col-sm-4">
+                    <p>Year:</p>
+                    <input type="number" th:field="*{year}" />
+                    <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span>
+                    <br><br>
+                    <p>Make:</p>
+                    <input type="text" th:field="*{make}" />
+                    <span th:if="${#fields.hasErrors('make')}" th:errors="*{make}"></span>
+                    <br><br>
+                    <p>Model:</p>
+                    <input type="text" th:field="*{model}" />
+                    <span th:if="${#fields.hasErrors('model')}" th:errors="*{model}">&nbsp;&nbsp;</span>
+                    <br><br>
+                    <p>Category:</p>
+                    <select name="category" th:field="*{category}">
+                        <option th:each="category : ${categories}"
+                                th:value="${category.id}"
+                                th:text="${category.categoryName}"></option>
+                    </select>
+                    <br>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-4">
+                    <p>Color:</p>
+                    <input type="text" th:field="*{color}" />
+                    <span th:if="${#fields.hasErrors('color')}" th:errors="*{color}">&nbsp;&nbsp;</span>
+                    <br><br>
+                    <p>Condition:</p>
+                    <input type="text" th:field="*{used}" />
+                    <span th:if="${#fields.hasErrors('used')}" th:errors="*{used}">&nbsp;&nbsp;</span>
+                    <br><br>
+                    <p>Price:</p>
+                    <input type="number" th:field="*{price}" />
+                    <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>
+                    <br><br>
+                    <button type="submit" style="color: maroon"><b>Submit</b></button>
+                </div>
+
+            <div class="col-sm-1"></div>
+        </div>
+    </form>
+</div>
+<br>
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>

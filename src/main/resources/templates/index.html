@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Index</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <h1 style="color: maroon"><b>Categories</b></h1>
+            <h6 style="color: maroon">Click <b>Details</b> to see all cars in that category!</h6>
+            <table>
+                <tr>
+                    <th>Category&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                </tr>
+                <tr th:each="category : ${categories}">
+                    <td th:text="${category.categoryName}"></td>
+                    <td>
+                        <a th:href="@{update_category/{id}(id=${category.id})}">Update</a>
+                        <span>&nbsp</span>
+                        <a th:href="@{detail_category/{id}(id=${category.id})}">Details</a>
+                        <span>&nbsp</span>
+                        <a th:href="@{delete_category/{id}(id=${category.id})}">Delete</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            <h1 style="color: maroon"><b>Cars</b></h1>
+            <table>
+                <tr>
+                    <th>Year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Make&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Category&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Color&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Condition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Price&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <th>Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                </tr>
+                <tr th:each="car : ${cars}">
+                    <td th:text="${car.year}"></td>
+                    <td th:text="${car.make}"></td>
+                    <td th:text="${car.model}"></td>
+                    <td th:text="${car.category.categoryName}"></td>
+                    <td th:text="${car.color}"></td>
+                    <td style="text-align: center" th:text="${car.used}"></td>
+                    <td style="text-align: right" th:text="${car.priceString}"></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        <a th:href="@{update_car/{id}(id=${car.id})}">Update</a>
+                        <span>&nbsp</span>
+                        <a th:href="@{detail_car/{id}(id=${car.id})}">Details</a>
+                        <span>&nbsp</span>
+                        <a th:href="@{delete_car/{id}(id=${car.id})}">Delete</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+<br>
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>

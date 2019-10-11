@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Category List</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<br>
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1 style="color: maroon">Category List</h1>
+        <h6 style="color: maroon">Click <b>Details</b> to see all cars in that category!</h6>
+        <div class="row">
+            <div class="col-sm-5"></div>
+            <div class="col-sm-3">
+                <table>
+                    <tr>
+                        <th>Category&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <th>Options</th>
+                    </tr>
+
+                    <tr th:each="category : ${categories}">
+                        <td th:text="${category.categoryName}"></td>
+
+                        <td>
+                            <a th:href="@{update_category/{id}(id=${category.id})}">Update</a>
+                            <span>&nbsp</span>
+                            <a th:href="@{detail_category/{id}(id=${category.id})}"><b>Details</b></a>
+                            <span>&nbsp</span>
+                            <a th:href="@{delete_category/{id}(id=${category.id})}">Delete</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</div>
+<br>
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>

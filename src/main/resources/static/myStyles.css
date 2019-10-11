@@ -1,5 +1,5 @@
 body{
-    background-image: url(https://res.cloudinary.com/dhg2lpfid/image/upload/v1570167265/Attachment-1_1_vgra0i.jpg);
+    background-image: url(https://res.cloudinary.com/dhg2lpfid/image/upload/v1570788662/parking-lot-300x197_kfbcew.jpg);
     background-size: cover;
     /*font-family: 'Scheherazade', serif;*/
     font-size: 18px;
@@ -18,8 +18,16 @@ h3{
     text-align: left;
 }
 
+h6{
+    text-align: center;
+}
+
 a{
-    color: darkblue;
+    color: maroon;
+}
+
+p{
+
 }
 
 button{
@@ -27,21 +35,21 @@ button{
 }
 
 .container{
-    background-color: lightskyblue;
-    width: max-content;
+    background-color: lightyellow;
+    width: fit-content;
     /*margin-left: 20px;*/
     /*margin-right: 20px;*/
 }
 
 .container-fluid{
-    background-color: lightskyblue;
-    width: fit-content;
-    margin-left: 20px;
-    margin-right: 20px;
+    background-color: lightyellow;
+    width: auto;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .jumbotron{
-    background-color: lightskyblue;
+    background-color: lightyellow;
     alignment: center;
     padding-top: 15px;
     padding-left: 15px;
@@ -55,7 +63,7 @@ button{
 }
 
 .table{
-    background-color: lightskyblue;
+    background-color: lightyellow;
     text-align: center;
 }
 
