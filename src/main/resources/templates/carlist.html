@@ -10,9 +10,13 @@
 <div class="container-fluid">
     <div class="jumbotron">
         <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
+            <div class="col-sm-12">
                 <h1 style="color: maroon"><b>Cars</b></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
                 <table>
                     <tr>
                         <th>Year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
@@ -35,16 +39,16 @@
                         <td style="text-align: right" th:text="${car.priceString}"></td>
                         <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                         <td>
-                            <a th:href="@{update_car/{id}(id=${car.id})}">Update</a>
+                            <a th:href="@{/update_car/{id}(id=${car.id})}">Update</a>
                             <span>&nbsp</span>
-                            <a th:href="@{detail_car/{id}(id=${car.id})}">Details</a>
+                            <a th:href="@{/detail_car/{id}(id=${car.id})}">Details</a>
                             <span>&nbsp</span>
-                            <a th:href="@{delete_car/{id}(id=${car.id})}">Delete</a>
+                            <a th:href="@{/delete_car/{id}(id=${car.id})}">Delete</a>
                         </td>
                     </tr>
                 </table>
             </div>
-            <div class="col-sm-3"></div>
+<!--            <div class="col-sm-3"></div>-->
         </div>
     </div>
 </div>
